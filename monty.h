@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
+/* STRUCTURES */
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -36,7 +37,33 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct allocation_history - tracks and stores allocations
+ * @mem_ptr: pointer to allocated memory
+ * @next: pointer to next node in list
+ *
+ * Description: stores a pointer to each allocation, allowing
+ * greater organization and more efficient freeing
+ */
+typedef struct allocation_history
+{
+	char *mem_ptr;
+	struct allocation_history *next;
+
+} mem_list;
+
+/* PROTOTYPES */
 void exec_op(char **args);
 void (*get_op(char *func_string))(stack_t **stack, unsigned int line_number);
+
+/* EXTERNS */
+extern unsigned int line_number; /* input line number */
+unsigned int line_number;
+extern stack_t **head; /* stack head */
+stack_t **head;
+extern stack_t **tail; /* end of list */
+stack_t **tail;
+extern mem_list **misc_mem_head; /* head of misc mem tracker */
+mem_list *misc_mem_head;
 
 #endif /* MONTY_H */
