@@ -17,11 +17,11 @@ void _push(char **args)
 	new->n = atoi(args[1]);
 	new->next = NULL;
 	new->prev = NULL;
-	if (*head)
+	if (head)
 	{
-		new->next = *head;
-		(*head)->prev = new;
-		*head = new;
+		new->next = head;
+		head->prev = new;
+		head = new;
 	}
-	*head = new;
+	head = new;
 }
