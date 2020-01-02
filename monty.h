@@ -55,20 +55,20 @@ typedef struct allocation_history
 
 /* PROTOTYPES */
 void exec_op(char **args);
-void (*get_op(char *func_string))(char **args);
+void (*get_op(char *func_string))(stack_t **head, unsigned int line_number);
 
 /* OPCODE PROTOTYPES */
 void _push(char **args);
-void _pall(char **args);
+void _pall(stack_t **head, unsigned int line_number);
 
 /* EXTERNS */
 extern unsigned int line_number; /* input line number */
 unsigned int line_number;
-extern stack_t **head; /* stack head */
-stack_t **head;
-extern stack_t **tail; /* end of list */
-stack_t **tail;
-extern mem_list **misc_mem_head; /* head of misc mem tracker */
-mem_list **misc_mem_head;
+extern stack_t *head; /* stack head */
+stack_t *head;
+extern stack_t *tail; /* end of list */
+stack_t *tail;
+extern mem_list *misc_mem_head; /* head of misc mem tracker */
+mem_list *misc_mem_head;
 
 #endif /* MONTY_H */
