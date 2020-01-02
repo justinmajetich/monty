@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
 	unsigned int line_number = 1;
 	size_t line_size = 0;
-	size_t read = 0;
+	ssize_t read = 0;
 	char *line = NULL;
 	char **tokens = NULL;
 	FILE *input_file = NULL;
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	if (!input_file)
 		print_error(2); /* open failed */
 
-	while (1)
+	while (line_number++) /* increment line number with iterations */
 	{
 		/* retrieve line from input */
 		read = getline(&line, &line_size, input_file);
