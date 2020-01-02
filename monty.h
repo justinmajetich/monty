@@ -56,6 +56,10 @@ typedef struct allocation_history
 void exec_op(char **args);
 void (*get_op(char *func_string))(char **args);
 
+/* OPCODE PROTOTYPES */
+void _push(char **args);
+void _pall(char **args);
+
 /* EXTERNS */
 extern unsigned int line_number; /* input line number */
 unsigned int line_number;
