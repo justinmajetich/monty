@@ -9,18 +9,18 @@ void exec_op(char **args)
 {
 	stack_t *stack = NULL;
 
-	(*get_op(*args))(&stack, line_number);
+	(*get_op(*args))(**args);
 	/*line_number++;*/
 	/*free(*args);*/
 }
 
 /**
  * get_op - Uses correct op code function
- * @func: String name of function
+ * @func_string: String name of function
  * Return: pointer to correct function
  */
 
-void (*get_op(char *func_string))(stack_t **stack, unsigned int line_number)
+void (*get_op(char *func_string))(char **args)
 {
 	int i = 0;
 
