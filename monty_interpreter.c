@@ -1,5 +1,4 @@
 #include "monty.h"
-#include "opcode.h"
 
 int main(int argc, char **argv)
 {

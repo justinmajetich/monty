@@ -64,6 +64,6 @@ stack_t **head;
 extern stack_t **tail; /* end of list */
 stack_t **tail;
 extern mem_list **misc_mem_head; /* head of misc mem tracker */
-mem_list *misc_mem_head;
+mem_list **misc_mem_head;
 
 #endif /* MONTY_H */
