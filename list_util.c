@@ -10,7 +10,7 @@ size_t node_count(stack_t **h)
 	size_t node_cnt = 0;
 	stack_t *temp;
 
-	temp = h;
+	temp = *h;
 	while (temp)
 	{
 		node_cnt++;

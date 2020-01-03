@@ -12,7 +12,7 @@ void _pop(stack_t **head, unsigned int line_number)
 	(void)line_number;
 
 	if (*head == NULL)
-		print_error(7, NULL)
+		print_error(7, NULL);
 	hold = pos;
 	*head = pos->next;
 	if (pos->next)
@@ -29,7 +29,7 @@ void swap(stack_t **head, unsigned int line_number)
 	stack_t *a, *b;
 	(void)line_number;
 
-	if (node_count(*head) < 2)
+	if (node_count(head) < 2)
 		print_error(8, NULL);
 
 	a = *head;
