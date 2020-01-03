@@ -7,7 +7,9 @@
 
 void exec_op(char **args)
 {
-	if (strcmp(args[0], "push") == 0)
+	if (*args[0] == '#')
+		_nop(&head, line_number);
+	else if (strcmp(args[0], "push") == 0)
 		_push(args);
 	else
 		(*get_op(args[0]))(&head, line_number);
@@ -29,8 +31,12 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 		{"pop", _pop},
 		{"add", _add},
 		{"swap", _swap},
+		{"nop", _nop},
+		{"sub", _sub},
+		{"div", _div},
 		{NULL, NULL}
 	};
+
 	while (ops[i].opcode)
 	{
 		if (strcmp(func_string, ops[i].opcode) == 0)
