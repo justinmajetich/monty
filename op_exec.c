@@ -39,6 +39,7 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 		{"rotl", _rotl},
 		{"rotr", _rotr},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 

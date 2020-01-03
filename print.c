@@ -48,3 +48,25 @@ void _pchar(stack_t **head, unsigned int line_number)
 	else
 		printf("%c\n", (*head)->n);
 }
+
+/**
+ * _pstr - prints string starting at the top of the stack, followed by new line
+ * string stops when stack is over, value is 0 or not in ascii table
+ * @head: pointer to beginning of stack or queue
+ * @line_number: the line number at which the opcode is called on
+ */
+
+void _pstr(stack_t **head, unsigned int line_number)
+{
+	stack_t *pos = *head;
+	(void)line_number;
+
+	while (pos != NULL)
+	{
+		if (pos->n < 1 || pos->n > 127)
+			break;
+		printf("%c", pos->n);
+		pos = pos->next;
+	}
+	putchar('\n');
+}
