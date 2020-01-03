@@ -98,7 +98,7 @@ void _mul(stack_t **head, unsigned int line_number)
 	free(a);
 }
 /**
- * _mod - take remainder of second stack elem divided by top elem 
+ * _mod - take remainder of second stack elem divided by top elem
  * @head: pointer to beginning of stack or queue
  * @line_number: line number of input file
  */

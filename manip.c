@@ -52,7 +52,7 @@ void _nop(stack_t **head, unsigned int line_number)
 	(void)line_number;
 }
 /**
- * rotl - rotate stack toward top
+ * _rotl - rotate stack toward top
  * @head: top of stack
  * @line_number: line number of input file
  */
@@ -78,7 +78,7 @@ void _rotl(stack_t **head, unsigned int line_number)
 	}
 }
 /**
- * rotr - rotate stack toward bottom
+ * _rotr - rotate stack toward bottom
  * @head: top of stack
  * @line_number: line number of input file
  */
