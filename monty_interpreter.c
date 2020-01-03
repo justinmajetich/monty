@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	FILE *input_file = NULL;
 
 	if (argc != 2)
-		print_error(1); /* monty usage error */
+		print_error(1, NULL); /* monty usage error */
 
 	input_file = fopen(argv[1], "r"); /* open file */
 	if (!input_file)
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
 		tokens = malloc(sizeof(char *) * 2);
 		if (!tokens)
-			print_error(4);
+			print_error(4, NULL);
 
 		tokens[0] = strtok(line, " "); /* tokenize opcode */
 		tokens[1] = strtok(NULL, " "); /* tokenize arg */

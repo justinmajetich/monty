@@ -32,5 +32,6 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 			return (ops[i].f);
 		i++;
 	}
+	print_error(3, func_string); /* error, if invalid opcode */
 	return (NULL);
 }

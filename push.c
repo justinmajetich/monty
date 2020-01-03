@@ -10,10 +10,10 @@ void _push(char **args)
 	stack_t *new;
 
 	if (!args[1] || !isdigit(args[1]))
-		print_error(5);
+		print_error(5, NULL);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		print_error(4);
+		print_error(4, NULL);
 	new->n = atoi(args[1]);
 	new->next = NULL;
 	new->prev = NULL;
