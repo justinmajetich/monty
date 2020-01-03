@@ -37,6 +37,7 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
