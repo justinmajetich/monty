@@ -18,3 +18,13 @@ size_t node_count(stack_t **h)
 	}
 	return (node_cnt);
 }
+/**
+ * locate_tail - move pointer to tail
+ * @tail: pointer to point to tail
+ */
+void locate_tail(stack_t **tail)
+{
+	*tail = head; /* initialize tail at head of list */
+	while ((*tail)->next) /* loop till tail points at last node */
+		(*tail) = (*tail)->next;
+}

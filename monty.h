@@ -70,6 +70,8 @@ void _sub(stack_t **head, unsigned int line_number);
 void _div(stack_t **head, unsigned int line_number);
 void _mod(stack_t **head, unsigned int line_number);
 void _mul(stack_t **head, unsigned int line_number);
+void _rotl(stack_t **head, unsigned int line_number);
+void _rotr(stack_t **head, unsigned int line_number);
 
 /* UTILITY PROTOTYPES */
 size_t node_count(stack_t **h);
@@ -77,6 +79,7 @@ void free_memory(const char *scope);
 void free_mem_list(mem_list **h);
 void free_stack_t(stack_t **h);
 void add_mem_list(char *ptr);
+void locate_tail(stack_t **tail);
 
 /* EXTERNS */
 extern unsigned int line_number; /* input line number */
