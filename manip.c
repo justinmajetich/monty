@@ -19,3 +19,25 @@ void _pop(stack_t **head, unsigned int line_number)
 		pos->next->prev = NULL;
 	free(hold);
 }
+/**
+ * swap - swap top two elements of stack
+ * @head: top of stack
+ * @line_number: line number of input file
+ */
+void swap(stack_t **head, unsigned int line_number)
+{
+	stack_t *a, *b;
+	(void)line_number;
+
+	if (node_count(*head) < 2)
+		print_error(8, NULL);
+
+	a = *head;
+	b = a->next;
+	a->next = b->next;
+	b->next->prev = a;
+	b->next = a;
+	a->prev = b;
+	b->prev = NULL;
+	*head = b;
+}
