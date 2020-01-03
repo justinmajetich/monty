@@ -24,7 +24,7 @@ void _pop(stack_t **head, unsigned int line_number)
  * @head: top of stack
  * @line_number: line number of input file
  */
-void swap(stack_t **head, unsigned int line_number)
+void _swap(stack_t **head, unsigned int line_number)
 {
 	stack_t *a, *b;
 	(void)line_number;
