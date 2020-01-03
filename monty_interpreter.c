@@ -6,7 +6,6 @@ int main(int argc, char **argv)
 	ssize_t read = 0;
 	char *line = NULL;
 	char **tokens = NULL;
-	FILE *input_file = NULL;
 
 	if (argc != 2)
 		print_error(1, NULL); /* monty usage error */
@@ -20,22 +19,24 @@ int main(int argc, char **argv)
 	{
 		/* retrieve line from input */
 		read = getline(&line, &line_size, input_file);
+		add_mem_list(line);
 		if (read == -1)
 			break;
 
 		tokens = malloc(sizeof(char *) * 2);
 		if (!tokens)
 			print_error(4, NULL);
-
+		add_mem_list((char *)tokens);
 		tokens[0] = strtok(line, " \n"); /* tokenize opcode */
 		tokens[1] = strtok(NULL, " \n"); /* tokenize arg */
-
 		exec_op(tokens); /* pass args to executor */
 
 		free_memory("misc"); /* free lines and tokens */
-
+		line = NULL;
+		tokens = NULL;
 		line_number++;
 	}
+	fclose(input_file);
 	free_memory("all");
 	return (0);
 }

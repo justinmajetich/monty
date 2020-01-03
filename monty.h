@@ -57,7 +57,6 @@ typedef struct allocation_history
 void exec_op(char **args);
 void (*get_op(char *func_string))(stack_t **head, unsigned int line_number);
 void print_error(size_t, char *);
-void free_memory(const char *scope);
 
 /* OPCODE PROTOTYPES */
 void _push(char **args);
@@ -69,10 +68,16 @@ void _swap(stack_t **head, unsigned int line_number);
 
 /* UTILITY PROTOTYPES */
 size_t node_count(stack_t **h);
+void free_memory(const char *scope);
+void free_mem_list(mem_list **h);
+void free_stack_t(stack_t **h);
+void add_mem_list(char *ptr);
 
 /* EXTERNS */
 extern unsigned int line_number; /* input line number */
 unsigned int line_number;
+extern FILE *input_file; /* input file pointer */
+FILE *input_file;
 extern stack_t *head; /* stack head */
 stack_t *head;
 extern stack_t *tail; /* end of list */

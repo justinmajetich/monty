@@ -38,6 +38,7 @@ void print_error(size_t _errno, char *s)
 			break;
 	}
 	free_memory("all");
+	fclose(input_file);
 	exit(EXIT_FAILURE);
 }
 /**
@@ -75,5 +76,6 @@ void print_error_continued(size_t _errno)
 			break;
 	}
 	free_memory("all");
+	fclose(input_file);
 	exit(EXIT_FAILURE);
 }
