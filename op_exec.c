@@ -9,7 +9,8 @@ void exec_op(char **args)
 {
 	if (strcmp(args[0], "push") == 0)
 		_push(args);
-	(*get_op(args[0]))(&head, line_number);
+	else
+		(*get_op(args[0]))(&head, line_number);
 }
 
 /**

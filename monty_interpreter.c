@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-	unsigned int line_num = 1;
+	unsigned int line_number = 1;
 	size_t line_size = 0;
 	ssize_t read = 0;
 	char *line = NULL;
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	if (!input_file)
 		print_error(2, argv[1]); /* open failed */
 
-	while (line_num++) /* increment line number with iterations */
+	while (line_number++) /* increment line number with iterations */
 	{
 		/* retrieve line from input */
 		read = getline(&line, &line_size, input_file);
@@ -27,8 +27,8 @@ int main(int argc, char **argv)
 		if (!tokens)
 			print_error(4, NULL);
 
-		tokens[0] = strtok(line, " "); /* tokenize opcode */
-		tokens[1] = strtok(NULL, " "); /* tokenize arg */
+		tokens[0] = strtok(line, " \n"); /* tokenize opcode */
+		tokens[1] = strtok(NULL, " \n"); /* tokenize arg */
 
 		exec_op(tokens); /* pass args to executor */
 
