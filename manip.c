@@ -41,3 +41,17 @@ void _swap(stack_t **head, unsigned int line_number)
 	b->prev = NULL;
 	*head = b;
 }
+
+/**
+ * _nop - doesnt do anything
+ * @head: top of stack
+ * @line_number: line number of input file
+ */
+
+void _nop(stack_t **head, unsigned int line_number)
+{
+	(void)head;
+	(void)line_number;
+
+	return;
+}
