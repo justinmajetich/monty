@@ -1,5 +1,11 @@
 #include "monty.h"
-
+/**
+ * main - interpret monty opcode
+ * @argc: number of arguments passed to program
+ * @argv: string arguments passed to program
+ *
+ * Return: 0 on success; exit with error code on failure
+ */
 int main(int argc, char **argv)
 {
 	size_t line_size = 0;

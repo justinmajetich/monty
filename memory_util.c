@@ -24,7 +24,7 @@ void free_memory(const char *scope)
 {
 	if (strcmp(scope, "misc") == 0)
 		free_mem_list(&misc_mem_head);
-	
+
 	if (strcmp(scope, "all") == 0)
 	{
 		free_mem_list(&misc_mem_head);

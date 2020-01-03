@@ -5,7 +5,6 @@
  * @head: pointer to beginning of stack or queue
  * @line_number: the line number at which the opcode is called on
  */
-
 void _pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *pos = *head, *hold;
@@ -20,7 +19,7 @@ void _pop(stack_t **head, unsigned int line_number)
 	free(hold);
 }
 /**
- * swap - swap top two elements of stack
+ * _swap - swap top two elements of stack
  * @head: top of stack
  * @line_number: line number of input file
  */
@@ -52,6 +51,4 @@ void _nop(stack_t **head, unsigned int line_number)
 {
 	(void)head;
 	(void)line_number;
-
-	return;
 }
