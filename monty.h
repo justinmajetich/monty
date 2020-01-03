@@ -62,6 +62,8 @@ void free_memory(const char *scope);
 /* OPCODE PROTOTYPES */
 void _push(char **args);
 void _pall(stack_t **head, unsigned int line_number);
+void _pint(stack_t **head, unsigned int line_number);
+void _pop(stack_t **head, unsigned int line_number);
 
 /* EXTERNS */
 extern unsigned int line_number; /* input line number */
