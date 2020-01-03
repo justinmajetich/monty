@@ -32,6 +32,7 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 		{"add", _add},
 		{"swap", _swap},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 
