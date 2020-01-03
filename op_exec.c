@@ -27,6 +27,7 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"add", _add},
 		{NULL, NULL}
 	};
 	while (ops[i].opcode)
