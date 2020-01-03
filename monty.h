@@ -56,6 +56,7 @@ typedef struct allocation_history
 /* PROTOTYPES */
 void exec_op(char **args);
 void (*get_op(char *func_string))(stack_t **head, unsigned int line_number);
+void print_error(size_t, char *);
 
 /* OPCODE PROTOTYPES */
 void _push(char **args);
