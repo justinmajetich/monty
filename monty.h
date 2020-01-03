@@ -64,6 +64,7 @@ void _push(char **args);
 void _pall(stack_t **head, unsigned int line_number);
 void _pint(stack_t **head, unsigned int line_number);
 void _pop(stack_t **head, unsigned int line_number);
+void _swap(stack_t **head, unsigned int line_number);
 
 /* UTILITY PROTOTYPES */
 size_t node_count(stack_t **h);
