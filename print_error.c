@@ -38,7 +38,7 @@ void print_error(size_t _errno, char *s)
 			break;
 	}
 	free_memory("all");
-	if (_errno != 2)
+	if (_errno > 2)
 		fclose(input_file);
 	exit(EXIT_FAILURE);
 }
