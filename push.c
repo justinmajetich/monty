@@ -63,11 +63,18 @@ void _push_queue(char **args)
  */
 int is_integer(char *string)
 {
-	while (*string != '\0')
+	int i = 0;
+
+	/* if first char is '-', accept and increment to next char */
+	if (string[i] == '-')
+		i++;
+
+	while (string[i] != '\0')
 	{
-		if (isdigit(*string) == 0)
-			return (0);
-		string++;
+		/* if char is not digit, return false */
+		if (isdigit(string[i]) == 0)
+				return (0);
+		i++;
 	}
 	return (1);
 }
