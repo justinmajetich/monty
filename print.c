@@ -43,7 +43,7 @@ void _pchar(stack_t **head, unsigned int line_number)
 
 	if (*head == NULL)
 		print_error(16, NULL);
-	else if ((*head)->n < 0 || (*head)->n > 127)
+	else if ((*head)->n < 32 || (*head)->n > 127)
 		print_error(15, NULL);
 	else
 		printf("%c\n", (*head)->n);
@@ -63,7 +63,7 @@ void _pstr(stack_t **head, unsigned int line_number)
 
 	while (pos != NULL)
 	{
-		if (pos->n < 1 || pos->n > 127)
+		if (pos->n < 32 || pos->n > 127)
 			break;
 		printf("%c", pos->n);
 		pos = pos->next;
