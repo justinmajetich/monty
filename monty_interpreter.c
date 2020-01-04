@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	ssize_t read = 0;
 	char *line = NULL;
 	char **tokens = NULL;
-	
+
 	if (argc != 2)
 		print_error(1, NULL); /* monty usage error */
 

@@ -73,7 +73,7 @@ int is_integer(char *string)
 	{
 		/* if char is not digit, return false */
 		if (isdigit(string[i]) == 0)
-				return (0);
+			return (0);
 		i++;
 	}
 	return (1);
