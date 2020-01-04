@@ -59,7 +59,8 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number);
 void print_error(size_t, char *);
 
 /* OPCODE PROTOTYPES */
-void _push(char **args);
+void _push_stack(char **args);
+void _push_queue(char **args);
 void _pall(stack_t **head, unsigned int line_number);
 void _pint(stack_t **head, unsigned int line_number);
 void _pop(stack_t **head, unsigned int line_number);
@@ -74,6 +75,8 @@ void _rotl(stack_t **head, unsigned int line_number);
 void _rotr(stack_t **head, unsigned int line_number);
 void _pchar(stack_t **head, unsigned int line_number);
 void _pstr(stack_t **head, unsigned int line_number);
+void _stack(stack_t **head, unsigned int line_number);
+void _queue(stack_t **head, unsigned int line_number);
 
 /* UTILITY PROTOTYPES */
 size_t node_count(stack_t **h);
@@ -94,5 +97,7 @@ extern stack_t *tail; /* end of list */
 stack_t *tail;
 extern mem_list *misc_mem_head; /* head of misc mem tracker */
 mem_list *misc_mem_head;
+extern size_t list_mode; /* tracks whether or not list is stack or queue */
+size_t list_mode;
 
 #endif /* MONTY_H */

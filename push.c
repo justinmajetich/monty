@@ -1,11 +1,10 @@
 #include "monty.h"
 int is_integer(char *string);
 /**
- * _push - pushes an element to the stack
- * @args: arguments of line passed in from file
+ * _push_stack - pushes an element to top of stack
+ * @args: line arguments read from file
  */
-
-void _push(char **args)
+void _push_stack(char **args)
 {
 	stack_t *new;
 
@@ -24,6 +23,37 @@ void _push(char **args)
 		head = new;
 	}
 	head = new;
+}
+/**
+ * _push_queue - pushes an element to rear of queue
+ * @args: line arguments read from file
+ */
+void _push_queue(char **args)
+{
+	stack_t *new, *tail = NULL;
+
+	/* check if arguments are valid */
+	if (!args[1] || !is_integer(args[1]))
+		print_error(5, NULL);
+
+	/* allocate for new node */
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+		print_error(4, NULL);
+
+	/* initialize new node */
+	new->n = atoi(args[1]);
+	new->next = NULL;
+	new->prev = NULL;
+
+	if (head)
+	{
+		locate_tail(&tail); /* position tail pointer */
+		tail->next = new;
+		new->prev = tail;
+	}
+	else
+		head = new;
 }
 /**
  * is_integer - determines if string is integer
