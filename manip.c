@@ -30,10 +30,13 @@ void _swap(stack_t **head, unsigned int line_number)
 	if (node_count(head) < 2)
 		print_error(8, NULL);
 
+
 	a = *head;
 	b = a->next;
+
 	a->next = b->next;
-	b->next->prev = a;
+	if (b->next)
+		b->next->prev = a;
 	b->next = a;
 	a->prev = b;
 	b->prev = NULL;
