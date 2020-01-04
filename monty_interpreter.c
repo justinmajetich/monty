@@ -34,9 +34,10 @@ int main(int argc, char **argv)
 		if (!tokens)
 			print_error(4, NULL);
 		add_mem_list((char *)tokens);
-		tokens[0] = strtok(line, " \n"); /* tokenize opcode */
-		tokens[1] = strtok(NULL, " \n"); /* tokenize arg */
-		exec_op(tokens); /* pass args to executor */
+		tokens[0] = strtok(line, " \t\n"); /* tokenize opcode */
+		tokens[1] = strtok(NULL, " \t\n"); /* tokenize arg */
+		if (tokens[0]) /* guard against empty line input */
+			exec_op(tokens); /* pass args to executor */
 
 		free_memory("misc"); /* free lines and tokens */
 		line = NULL;
