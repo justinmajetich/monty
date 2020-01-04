@@ -46,5 +46,5 @@ int main(int argc, char **argv)
 	}
 	fclose(input_file);
 	free_memory("all");
-	return (0);
+	return (EXIT_SUCCESS);
 }

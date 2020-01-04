@@ -66,7 +66,7 @@ int is_integer(char *string)
 	int i = 0;
 
 	/* if first char is '-', accept and increment to next char */
-	if (string[i] == '-')
+	if (string[0] == '-')
 		i++;
 
 	while (string[i] != '\0')
