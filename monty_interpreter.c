@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 	if (!input_file)
 		print_error(2, argv[1]); /* open failed */
 
+	list_mode = 0; /* set list mode to default (stack) */
 	line_number = 1;
 	while (1) /* increment line number with iterations */
 	{
