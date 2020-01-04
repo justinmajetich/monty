@@ -10,7 +10,12 @@ void exec_op(char **args)
 	if (*args[0] == '#')
 		_nop(&head, line_number);
 	else if (strcmp(args[0], "push") == 0)
-		_push(args);
+	{
+		if (list_mode == 0)
+			_push_stack(args);
+		else
+			_push_queue(args);
+	}
 	else
 		(*get_op(args[0]))(&head, line_number);
 }
@@ -40,6 +45,8 @@ void (*get_op(char *func_string))(stack_t **head, unsigned int line_number)
 		{"rotr", _rotr},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"stack", _stack},
+		{"queue", _queue},
 		{NULL, NULL}
 	};
 
